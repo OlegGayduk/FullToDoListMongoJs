@@ -9,7 +9,7 @@ class Client {
 
     getXhrType() {
 
-        var x;
+        let x;
     
         try {
             x = new ActiveXObject("Msxml2.XMLHTTP");
@@ -71,16 +71,16 @@ class Client {
     
         xhr.onprogress = function(event) {
         	document.getElementsByClassName('media-progress')[0].style.width = Math.round((event.loaded * 100) / event.total) + "%";
-        }
+        };
       
-        xhr.open('POST', "http://localhost:81/lab3MongoJs/php/list.php");
+        xhr.open('POST', "http://localhost:81/lab3MongoJs/php/list.php", true);
       
         xhr.send();
     }
 
     add() {
 
-    	var text = this.sanitize(document.getElementsByClassName("send-textarea")[0].value);
+    	let text = this.sanitize(document.getElementsByClassName("send-textarea")[0].value);
 
         if(text != "") {
 
@@ -118,9 +118,9 @@ class Client {
     
             xhr.onprogress = function(event) {
             	document.getElementsByClassName('media-progress')[0].style.width = Math.round((event.loaded * 100) / event.total) + "%";
-            }
+            };
       
-            xhr.open('POST', "http://localhost:81/lab3MongoJs/php/add.php");
+            xhr.open('POST', "http://localhost:81/lab3MongoJs/php/add.php", true);
 
             xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
@@ -156,9 +156,9 @@ class Client {
     
         xhr.onprogress = function(event) {
         	document.getElementsByClassName('media-progress')[0].style.width = Math.round((event.loaded * 100) / event.total) + "%";
-        }
+        };
       
-        xhr.open('POST', "http://localhost:81/lab3MongoJs/php/mark.php");
+        xhr.open('POST', "http://localhost:81/lab3MongoJs/php/mark.php", true);
 
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
@@ -189,9 +189,9 @@ class Client {
     
         xhr.onprogress = function(event) {
         	document.getElementsByClassName('media-progress')[0].style.width = Math.round((event.loaded * 100) / event.total) + "%";
-        }
+        };
       
-        xhr.open('POST', "http://localhost:81/lab3MongoJs/php/delete.php");
+        xhr.open('POST', "http://localhost:81/lab3MongoJs/php/delete.php", true);
 
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
       
